@@ -2,8 +2,11 @@
   <p class="title">Movies</p>
   <%= image_tag "theater.jpg", height: 400, style: "width: 100%" %>
 </div>
-
 <div class="container">
+  <%= link_to movies_new_path, class: "btn btn-primary add-movie-btn" do %>
+    Add a movie
+  <% end %>
+
   <div class="row">
     <% @movies.each do |movie| %>
       <%= render "card", movie: movie%>

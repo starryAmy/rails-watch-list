@@ -1,0 +1,17 @@
+<% @movies.each do |movie| %>
+  <%= render 'movies/card', movie: movie %>
+<% end %>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <div class="form-inputs">
+    <%= f.association :movie, label: "What's the movie you want to pick?"%>
+  </div>
+  <div class="form-inputs">
+    <%= f.input :comment, as: :text, label: "Leave your comment"%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+    <%= link_to 'Go to Home', root_path, class: 'btn btn-secondary' %>
+  </div>
+<% end %>

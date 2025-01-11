@@ -1,9 +1,13 @@
 // Import page-specific CSS files here.
 @import "home";
+$color-primary: #83C5BE;
+$color-secondary: #006D77;
+$color-tertiary: #FFDDD2;
+$color-quaternary: #E29578;
 
 .background {
   position: relative;
-  margin-bottom: 90px;
+  margin-bottom: 20px;
 }
 
 // 建立遮罩
@@ -32,4 +36,16 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-movie-btn{
+  align-self: flex-end;
+  margin-bottom: 20px;
+  background-color: $color-secondary;
+  border-radius: 10%;
 }

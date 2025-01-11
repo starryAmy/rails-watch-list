@@ -1,0 +1,12 @@
+<%= simple_form_for @movie, url: :root, method: :post do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title, label: "What's the title of the movie?"%>
+    <%= f.input :overview, as: :text, label: "What's the overview of this movie?"%>
+    <%= f.input :poster_url, label: "Please paste the url of the poster for this movie."%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+    <%= link_to 'Go to Home', root_path, class: 'btn btn-secondary' %>
+  </div>
+<% end %>

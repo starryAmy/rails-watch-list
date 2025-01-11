@@ -1,0 +1,11 @@
+
+<%= simple_form_for @list, url: create_list_path, method: :post do |f| %>
+  <div class="form-inputs">
+    <%= f.input :name, label: "What's the name of the list?"%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+    <%= link_to 'Go to Home', root_path, class: 'btn btn-secondary' %>
+  </div>
+<% end %>
