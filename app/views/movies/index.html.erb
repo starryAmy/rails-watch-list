@@ -1,0 +1,12 @@
+<div class="background">
+  <p class="title">Movies</p>
+  <%= image_tag "theater.jpg", height: 400, style: "width: 100%" %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <%= render "card", movie: movie%>
+    <% end %>
+  </div>
+</div>

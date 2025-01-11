@@ -10,3 +10,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+$color-primary: #83C5BE;
+$color-secondary: #006D77;
+$color-tertiary: #FFDDD2;
+$color-quaternary: #E29578;
+
+.fa-video {
+  color: $color-primary;
+  margin-left: 15px;
+  font-size: 30px;
+}
