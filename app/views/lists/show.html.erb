@@ -1,8 +1,19 @@
-<% @movies.each do |movie| %>
-  <%= render 'movies/card', movie: movie %>
-<% end %>
+<div class="container">
+  <div>
+    <h1>Movies in List: <%=@list.name%></h1>
+  </div>
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <%= render 'movies/card', movie: movie %>
+    <% end %>
+  </div>
 
-<%= simple_form_for [@list, @bookmark] do |f| %>
+  <div>
+    <h1>Let's add more movies into this list!</h1>
+  </div>
+
+  <div>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
   <div class="form-inputs">
     <%= f.association :movie, label: "What's the movie you want to pick?"%>
   </div>
@@ -14,4 +25,6 @@
     <%= f.button :submit %>
     <%= link_to 'Go to Home', root_path, class: 'btn btn-secondary' %>
   </div>
-<% end %>
+  <% end %>
+  </div>
+</div>

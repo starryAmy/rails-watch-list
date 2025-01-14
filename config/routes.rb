@@ -5,11 +5,10 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   root to: "movies#index"
   get "/movies/new", to: "movies#new"
-  get "/lists", to: "lists#index"
-  get "/lists/new", to: "lists#new"
-  post "/lists", to: "lists#create", as: "create_list"
-  get "/lists/:id", to: "lists#show", as: "list"
-  post "/lists/:id", to: "bookmarks#create", as: "list_bookmarks"
+
+  resources :lists, only: [:index, :new, :create, :show] do
+    post 'bookmarks', to: 'bookmarks#create'
+  end
 
   # Defines the root path route ("/")
   # root "posts#index"
