@@ -1,3 +1,7 @@
-<% @lists.each do |list|%>
-<%= link_to list.name, list_path(list) %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @lists.each do |list|%>
+      <%= render "card", list: list %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="col-md-4 col-sm-6 mb-3">
+  <div class="card" style="width: 100%;">
+  <%= cl_image_tag list.photo.key.to_s, class: "card-img-top" %>
+  <div class="card-body">
+    <%= link_to list.name, list_path(list), class: "card-title" %>
+  </div>
+  </div>
+</div>
