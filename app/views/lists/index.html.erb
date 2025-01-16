@@ -5,19 +5,16 @@
 <div class="container">
   <div class="row">
     <% @lists.each do |list| %>
-      <div class="col-md-4 col-sm-6 mb-3">
-        <div class="card list-background" style="width: 100%;">
-          <!-- 刪除按鈕 -->
-          <%= link_to list_path(list), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "list-delete-icon" do %>
+      <div class="col-md-4 col-sm-6 mb-3 card-position">
+        <%= link_to list_path(list), class: "card list-background", style: "width: 100%;" do %>
+          <p class="list-title"><%= list.name %></p>
+          <%= cl_image_tag list.photo.key.to_s, class: "card-img-top" %>
+        <% end %>
+        <!-- 刪除按鈕 -->
+        <%= link_to list_path(list), data: { turbo_confirm: "Are you sure?", turbo_method: "delete" }, style: "position: absolute; top: 10px; right: 30px; z-index: 20; color: white; font-size: 25px" do %>
             <i class="fa-solid fa-circle-xmark"></i>
           <% end %>
-
-          <!-- 點擊整個卡片 -->
-          <%= link_to list_path(list) do %>
-            <p class="list-title"><%= list.name %></p>
-            <%= cl_image_tag list.photo.key.to_s, class: "card-img-top" %>
-          <% end %>
-        </div>
+          <!-- 刪除按鈕 -->
       </div>
     <% end %>
   </div>

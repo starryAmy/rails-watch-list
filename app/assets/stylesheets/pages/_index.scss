@@ -75,15 +75,10 @@ $color-quaternary: #E29578;
   position: relative;
 }
 
-.list-delete-icon {
-  position: absolute;
-  top: 10px; /* 距離上方 10px，可根據需求調整 */
-  right: 10px; /* 距離右側 10px，可根據需求調整 */
-  z-index: 20; /* 保持在其他內容之上 */
-  font-size: 20px;
-  cursor: pointer; /* 鼠標變為手型，提升交互體驗 */
-  color: white;
+.card-position{
+  position: relative;
 }
+
 
 .list-background::before {
   content: ''; /* 必須有 content 才能顯示偽元素 */
