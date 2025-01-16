@@ -47,5 +47,24 @@ $color-quaternary: #E29578;
   align-self: flex-end;
   margin-bottom: 20px;
   background-color: $color-secondary;
-  border-radius: 10%;
+  border-radius: 12px;
+  height: 50px;
+  border: none;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 16px; /* 文字大小 */
+  font-weight: bold; /* 字體加粗 */
+  line-height: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: darken($color-secondary, 10%); /* 滑鼠移上時，按鈕背景變暗 */
+    transform: translateY(-2px); /* 添加輕微的移動效果 */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* 增加陰影深度 */
+  }
+  &:active {
+    transform: translateY(0); /* 點擊時回到原位 */
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); /* 按下時陰影縮小 */
+  }
+
 }
