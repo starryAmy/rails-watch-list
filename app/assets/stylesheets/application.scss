@@ -21,3 +21,29 @@ $color-quaternary: #E29578;
   margin-left: 15px;
   font-size: 30px;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 外部容器 .wrapper 設置為 Flex 容器 */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; /* 確保占滿視窗高度 */
+}
+
+/* 主內容區域彈性填滿剩餘空間 */
+.content {
+  flex: 1; /* 彈性填滿 */
+}
+
+/* Footer 樣式 */
+.footer {
+  background-color: $color-secondary;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
