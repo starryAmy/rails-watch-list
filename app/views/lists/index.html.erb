@@ -4,15 +4,21 @@
 </div>
 <div class="container">
   <div class="row">
-    <% @lists.each do |list|%>
-        <div class="col-md-4 col-sm-6 mb-3">
-        <%= link_to list_path(list) do %>
-          <div class="card list-background" style="width: 100%;">
+    <% @lists.each do |list| %>
+      <div class="col-md-4 col-sm-6 mb-3">
+        <div class="card list-background" style="width: 100%;">
+          <!-- 刪除按鈕 -->
+          <%= link_to list_path(list), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "list-delete-icon" do %>
+            <i class="fa-solid fa-circle-xmark"></i>
+          <% end %>
+
+          <!-- 點擊整個卡片 -->
+          <%= link_to list_path(list) do %>
             <p class="list-title"><%= list.name %></p>
             <%= cl_image_tag list.photo.key.to_s, class: "card-img-top" %>
-          </div>
-        <% end %>
+          <% end %>
         </div>
+      </div>
     <% end %>
   </div>
 </div>
