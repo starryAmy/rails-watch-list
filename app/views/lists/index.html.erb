@@ -5,7 +5,14 @@
 <div class="container">
   <div class="row">
     <% @lists.each do |list|%>
-      <%= render "card", list: list %>
+        <div class="col-md-4 col-sm-6 mb-3">
+        <%= link_to list_path(list) do %>
+          <div class="card list-background" style="width: 100%;">
+            <p class="list-title"><%= list.name %></p>
+            <%= cl_image_tag list.photo.key.to_s, class: "card-img-top" %>
+          </div>
+        <% end %>
+        </div>
     <% end %>
   </div>
 </div>

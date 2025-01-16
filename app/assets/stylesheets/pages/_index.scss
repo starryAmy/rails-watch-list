@@ -38,7 +38,7 @@ $color-quaternary: #E29578;
   object-fit: cover;
 }
 
-.container {
+.single-container {
   display: flex;
   flex-direction: column;
 }
@@ -67,4 +67,31 @@ $color-quaternary: #E29578;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); /* 按下時陰影縮小 */
   }
 
+}
+
+// list-background image
+
+.list-background {
+  position: relative;
+}
+
+.list-background::before {
+  content: ''; /* 必須有 content 才能顯示偽元素 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* 半透明黑色遮罩，可以根據需要調整顏色和透明度 */
+  z-index: 1; /* 讓遮罩層顯示在圖片之上 */
+}
+
+.list-title{
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  transform: translate(-50%, -50%); /* 使用 transform 居中 */
+  top: 50%;
+  left: 50%;
+  z-index: 5;
 }

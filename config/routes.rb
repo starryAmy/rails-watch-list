@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: "movies#index"
   get "/movies/new", to: "movies#new"
 
-  resources :lists, only: [:index, :new, :create, :show] do
+  resources :lists, only: [:index, :new, :create, :show, :destroy] do
     post 'bookmarks', to: 'bookmarks#create'
   end
 
