@@ -1,12 +1,14 @@
 
-<%= simple_form_for @list, method: :post do |f| %>
-  <div class="form-inputs">
-    <%= f.input :name, label: "What's the name of the list?"%>
-    <%= f.input :photo, as: :file%>
-  </div>
+<div class="container" style="padding-top: 40px">
+  <%= simple_form_for @list, method: :post do |f| %>
+    <div class="form-inputs">
+      <%= f.input :name, label: "What's the name of the list?"%>
+      <%= f.input :photo, as: :file%>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-    <%= link_to 'Go to Home', root_path, class: 'btn btn-secondary' %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit %>
+      <%= link_to 'Go to Home', root_path, class: 'btn btn-secondary' %>
+    </div>
+  <% end %>
+</div>
